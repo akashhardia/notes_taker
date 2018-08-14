@@ -1,0 +1,103 @@
+body{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    
+/*  get gradients from uigradients.com */
+
+    background: #005AA7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.completed{
+    text-decoration: line-through;
+    color: gray;
+}
+
+#container{
+    width: 100%;
+    margin: 0;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+h1{
+    background-color: #267cff;
+    margin: 0px 0px;
+    padding: 10px 20px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: x-large;
+}
+#container>input{
+    margin: 0;
+    padding: 13px 13px 13px 20px;
+    border: 3px solid rgba(0,0,0,0);
+    width: 100%;                   /* this does not include padding and margin */
+    box-sizing: border-box;        /* this makes it include padding and margin 
+                                      it is not supported by IE 6, IE 7        */
+    font-size: 18px;
+    background-color: #f7f7f7;
+    color:  #878787;
+}
+
+#container>input:focus{
+    background-color: #fff;
+    border: 3px solid #2980b9;
+    outline: none;                /* means the highlight effect*/
+}
+
+#container>ul{
+    margin:0;
+    padding:0;
+    list-style: none;         /*    list-style: none removes bullets*/
+}
+
+li{
+    background-color: #fff;
+    color: #3a3838;
+    height: 40px;    
+    line-height: 40px;        /*does not change font size but centers text vetically*/
+    padding: 0px 0px;
+    cursor: pointer;
+}
+
+li:nth-child(2n){        /*nth-child(2n) means every 2nd element. similarly 3n, 4n...*/
+    background-color: #f7f7f7;
+}
+
+.fa-pencil-alt{
+    float: right;
+    cursor: pointer;
+}
+
+span{
+    display: inline-block;
+    margin: 0px 20px 0px 0px;           /* T R B L */
+    width: 40px;                         /* Currently width is zero */
+    text-align: center;
+    color: white;
+    background-color: #d62a2a;
+}
+
+
+@media screen and (min-width: 500px){
+    #container{
+        margin: 100px auto;
+        width: 420px;
+    }
+    span{
+        width: 0px;                         /* Currently width is zero */
+        transition: 0.2s linear;              /* ease is animation */
+        opacity: 0;                         /* opacity 0 is fully transparent*/
+    }
+    
+    li:hover span{                    /* when we hover over li, select the span */
+        width: 40px;
+        opacity: 1;                         /* opacity 1 is fully opaque */
+    }
+
+}
